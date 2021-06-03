@@ -1,10 +1,10 @@
 # rooyale_With_Cheese
 
-This tutorial will show one example of a regular expression (or regex) that was written to validate an email address. I will then break down the regex into it's component pieces and explain the function of each piece. 
+This tutorial will show example's of a regular expression (or regex) I will next crack down the regex within it's component slice and analyze the function of each unite. 
 
 ## Summary
 
-This expression uses anchors, quantifiers, character classes, grouping, and bracket expressions. The forward slashes at the beginning and end of the regex are there to delimit the search pattern and are not explained below as components of the regex. Use the table of contents below for explanation and examples of each of these components of the regular expression above. 
+This expression uses anchors, quantifiers, character classes, grouping, and bracket expressions. The forward slashes at the opening and end of the regex are there to specify the search pattern of the regex. Use the table of contents below for explanation and examples of each of these components of the regular expression above. 
 
 ## Table of Contents
 
@@ -12,7 +12,7 @@ This expression uses anchors, quantifiers, character classes, grouping, and brac
 - [Quantifiers](#quantifiers)
 - [OR Operator](#or-operator)
 - [Character Classes](#character-classes)
-- [Flags](#flags)
+- 
 - [Grouping and Capturing](#grouping-and-capturing)
 - [Bracket Expressions](#bracket-expressions)
 - [Greedy and Lazy Match](#greedy-and-lazy-match)
@@ -20,7 +20,7 @@ This expression uses anchors, quantifiers, character classes, grouping, and brac
 - [Back-references](#back-references)
 - [Look-ahead and Look-behind](#look-ahead-and-look-behind)
 
-## Regex Components
+
 
 ### Anchors
 The anchors included in this regex are the ^ and the $ shown at the beginning and end of the line of code shown below:
@@ -40,46 +40,46 @@ The quantifier often follows a character class or bracket expression that define
 In this example, ([a-z\.]{2,6}), a matching expression will be anywhere from 2 to 6 characters in length composed of characters as defined by the bracket expression that precedes the {} quantifier. 
 
 ### OR Operator
+| Acts like a boolean OR. Matches the expression before or after the |. It can operate inward a group, or on a whole expression. The patterns will be approved in order. Just as in javaScript will match either set of characters. It will look for this OR that.
 
 ### Character Classes
-The characters within the braces define what the regex will match, while the quantifier indicates how many.
+The characters within the braces detail what the regex will meet, while the quantifier indicates how many.
 
-Character Classes
 The character class in regex below is the \d within the second set of braces.
 
 /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
 The \d character class will match a single digit. The \w character class will match a single alphanumeric character or underscore. The \s character class will match a single white space such as a space or tab.
 
-Capitalizing the letter will negate the character class so case is important when using these in your regex. For example, \D would match any character that is NOT a digit. 
-### Flags
+make capital of the letter will cancel out the character class so case is important when using these in your regex. For example, \D would match any character that is NOT a digit. 
 
 ### Grouping and Capturing
-Parenthesis are used for grouping in the regex below. In this particular regex, grouping is used to separate meta characters from literal characters. Grouping or capturing can also be used to isolate part of a string to back reference or to replace a part of the string.
+Parenthesis are used for grouping in the regex below. In this appropriate regex, grouping is used to free meta characters from accurate characters. Grouping or capturing can also be used to disengage part of a string to back reference or to replace a part of the string.
 
 /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
 ([a-z0-9_\.-]+) and ([\da-z\.-]+) and ([a-z\.]{2,6}) are all groups found in the regex above. 
+
 ### Bracket Expressions
 Bracket expressions are used to define what characters the regex will match. An example of a bracket expression from the regex we have been examining is:
 
 [a-z0-9_\.-]
-The characters that will match this bracket include the letters a-z, the numbers 0-9, an underscore, a period, and a dash.
+The characters that will match this bracket include the letters a-z, the numbers 0-9, an underscore, a slash, a period, and a dash.
 
-Note that the backslash is not included in the matching characters stated. That is because the . on it's own represents a character class that will match any character. So in the case that we want to include a literal . as a matching character in our bracket expression, we must first type a \ to indicate an escaped character. The backslash that precedes the period differentiates the meta ., which represents a character class, from the literal . that we want to include as a possible matching character in the bracket expression.
 
-Given the following bracket expression:
 
-[a-z0-9_\.-]
-brown_cow. //returns true
-fre$h*m!lk //returns false
-All characters in the first expression are included in the bracket expression and would therefore be matched. The second expression contains the special characters $*! which are not defined as matching by the bracket expression, and therefore would not be matched by the regex.
+### Greedy and Lazy Match 
+Greedy will consume as much as possible.  <.+> Suppose you have the following: <em>Hello World</em>
+You may think that <.+>  would only match the <em> and the </em>, when in reality it will be very impatient, and go from the first < to the last >. It will match <em>Hello World</em> 
+Making it lazy (<.+?>) will prevent this. By adding the ? after the +, we tell it to echo as few times as desirable, so the first > it comes across, is where we want to conclusion the matching. 
 
-### Greedy and Lazy Match
+### Boundaries 
+A word boundary, in most regex tongue, is a location between \w and \W (non-word char), or at the beginning or end of a string. If it initiate or completes  with a word character ([0-9A-Za-z_]).
 
-### Boundaries
 
 ### Back-references
+Back-references match the same text as formerly paired by a catching a group.  By focusing the opening tag into a backreference, we can reuse the name of the tag for the closing tag.
 
 ### Look-ahead and Look-behind
+Lookahead and lookbehind in a class are called “lookaround”, are zero-length declarations just like the start and end of a line. There are positive and negative lookarounds.
 
 ## Author
 
